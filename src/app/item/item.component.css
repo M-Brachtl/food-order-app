@@ -1,0 +1,40 @@
+h3 {
+    margin-top: 0;
+    word-break: break-word;
+    white-space: normal;
+    height: 50px;
+}
+div {
+    border: black solid 1px;
+    border-radius: 20%;
+    padding: 20px 10px;
+    text-align: center;
+    width: 160px;
+    height: 160px;
+}
+input[type="number"] {
+    width: 125px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+button {
+    border: none;
+    background-color: white;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: black;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
