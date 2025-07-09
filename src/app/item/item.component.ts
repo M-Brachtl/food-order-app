@@ -8,16 +8,16 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
   styleUrl: './item.component.css'
 })
 export class ItemComponent {
-  @Input() item: { id: number; name: string; price: number };
+  @Input() item: { id: number; name: string; price: number, discount: number };
 
   constructor() {
-    this.item = { id: 0, name: '#nic#', price: 0 };
+    this.item = { id: 0, name: '#nic#', price: 0, discount: 0 };
   }
 
   quantity: number = 1;
 
   get totalPrice(): number {
-    return this.item ? this.item.price*this.quantity : 0;
+    return this.item ? Math.round(this.item.price*this.quantity*(1-this.item.discount)*100)/100 : 0;
   }
 
   @ViewChild('itemDiv', { static: true }) itemDiv!: ElementRef;

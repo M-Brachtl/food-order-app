@@ -11,11 +11,13 @@
 
 <main class="main">
   <div class="select-board">
-    <h2>Přidejte do košíku</h2>
+    <h2>Přidejte do košíku <input type="text" placeholder="Hledat položku" [(ngModel)]="searchTerm"></h2>
     <div class="selection">
-      @for (item of items; track item) {
-        <cart-item [item]="item"></cart-item>
-      }
+      <div>
+        @for (item of items; track item) {
+          @if (item.name.toLowerCase().includes(searchTerm)) {<cart-item [item]="item"></cart-item>}
+        }
+      </div>
     </div>
   </div>
 </main>

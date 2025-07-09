@@ -55,12 +55,12 @@
     width: 100%;
     min-height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .angular-logo {
@@ -168,12 +168,36 @@
   }
 
   .selection {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 2rem;
+    /* display: flex;
+    flex-direction: row; */
+    /* gap: 1rem; */
+    margin-top: 1rem;
     border: black solid 1px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap;
+    justify-content: center; */
+    /* overflow-y: scroll; */
+    padding: 10px;
+    height: 86vh;
+  }
+
+  .selection div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 1rem;
+    overflow-y: auto;
+    width: 675px;
+    max-height: 86vh;
+  }
+
+  @media (max-height: 86vh) {
+    .selection div {
+      overflow-y: hidden;
+    }
+  }
+
+  .select-board h2 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
   }
