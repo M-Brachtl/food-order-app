@@ -20,6 +20,32 @@
       </div>
     </div>
   </div>
+  <div class="cart">
+    <h2>Košík</h2>
+    <div class="cart">
+      <tr>
+        <th class="itemName">Název</th>
+        <th class="itemPrice">Cena</th>
+        <th class="itemNotes">Poznámka</th>
+      </tr>
+      <div class="table-parent">
+        <table>
+          <!-- Loop through cart items and display them -->
+          @for (item of cartItems; track item) {
+            <tr>
+              <td class="itemName">{{ item.name }}</td>
+              <td class="itemPrice">{{ item.price.toLocaleString('cs-CZ', { minimumFractionDigits: 2 }) }} Kč</td>
+              <td class="itemNotes">{{ item.notes }}</td>
+            </tr>
+          }
+        </table>
+      </div>
+      <hr>
+      <div class="total">
+        <p><span>Celkem: </span> <span>{{ getCartTotal() }} Kč</span></p>
+      </div>
+    </div>
+  </div>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
