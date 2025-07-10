@@ -8,11 +8,11 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule for ngModel
   styleUrl: './item.component.css'
 })
 export class ItemComponent {
-  @Input() item: { id: number; name: string; price: number, discount: number };
+  @Input() item: { notes: string[]; name: string; price: number, discount: number };
   @Output() addToCartEvent = new EventEmitter<{name: string, price: number, notes: string}>();
 
   constructor() {
-    this.item = { id: 0, name: '#nic#', price: 0, discount: 0 };
+    this.item = { notes: ["not an option"], name: '#nic#', price: 0, discount: 0 };
   }
 
   quantity: number = 1;

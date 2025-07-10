@@ -5,7 +5,9 @@
     <button (click)="addToCart()" id="add-cart">Přidat do košíku</button>
     <select #addInfo>
         <option value="" disabled selected></option>
-        <option value="p-holder-1">Placeholder 1</option>
-        <option value="p-holder-2">Placeholder 2</option>
+        <!-- <option value="bez poznámky">Bez poznámky</option> -->
+        @for (optNote of item.notes; track optNote) {
+          <option value="{{ optNote }}">{{ optNote }}</option>
+        }
     </select>
 </div>
