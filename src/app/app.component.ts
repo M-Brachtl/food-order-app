@@ -38,4 +38,8 @@ export class AppComponent {
     const total = this.cartItems.reduce((sum, item) => sum + item.price, 0);
     return total.toLocaleString('cs-CZ', { minimumFractionDigits: 2 });
   }
+  addToCart(item: { name: string; price: number; notes: string }) {
+    this.cartItems.push(item);
+    //console.log(`Přidáno do košíku: ${item.name}, cena: ${item.price} Kč, poznámka: ${item.notes}`);
+  }
 }

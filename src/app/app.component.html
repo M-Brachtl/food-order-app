@@ -15,7 +15,7 @@
     <div class="selection">
       <div>
         @for (item of items; track item) {
-          @if (item.name.toLowerCase().includes(searchTerm)) {<cart-item [item]="item"></cart-item>}
+          @if (item.name.toLowerCase().includes(searchTerm)) {<cart-item [item]="item" (addToCartEvent)="addToCart($event)"></cart-item>}
         }
       </div>
     </div>

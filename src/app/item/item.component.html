@@ -1,8 +1,8 @@
-<div #itemDiv>
+<div>
     <h3>{{ item.name }}</h3>
     <p>{{ totalPrice.toLocaleString('cs-CZ', { minimumFractionDigits: 2 }) }} Kč</p>
-    <input type="number" [(ngModel)]="quantity" min="1" />
-    <button #addCartButton (click)="addToCart()" id="add-cart">Přidat do košíku</button>
+    <input type="number" [(ngModel)]="quantity" min="1" #quantityInput />
+    <button (click)="addToCart()" id="add-cart">Přidat do košíku</button>
     <select #addInfo>
         <option value="" disabled selected></option>
         <option value="p-holder-1">Placeholder 1</option>
