@@ -28,6 +28,7 @@
         <th class="itemPrice">Cena</th>
         <th class="itemNotes">Poznámka</th>
       </tr>
+      <hr>
       <div class="table-parent">
         <table>
           <!-- Loop through cart items and display them -->
@@ -43,16 +44,16 @@
       <hr>
       <div class="total">
         <p><span>Celkem: </span> <span>{{ getCartTotal() }} Kč</span></p>
+        <button (click)="switchMains()">Pokračovat</button>
       </div>
     </div>
-    <button (click)="switchMains()">Pokračovat</button>
   </div>
 </main>
 <main class="continue" style="display: none;" #continueMain>
   <h2>Dodatečné volby</h2>
   <h4>Vyberte zaškrtnutím: </h4>
-  <input type="checkbox" value="doprava" [(ngModel)]="dopravaCheck"> Doprava - 100 Kč<br>
-  <input type="checkbox" value="myko-karta" [(ngModel)]="mykoCard"> Karta Myko - sleva 20 Kč pro nákup nad 200 Kč + Doprava zdarma (musí být zaškrtnuto) + Dřívější dodání zdarma<br>
+  <p><input type="checkbox" value="doprava" [(ngModel)]="dopravaCheck"> Doprava - 100 Kč</p>
+  <p><input type="checkbox" value="myko-karta" [(ngModel)]="mykoCard"> Karta Myko - sleva 20 Kč pro nákup nad 200 Kč + Doprava zdarma (musí být zaškrtnuto) + Dřívější dodání zdarma</p>
   <h4>Vyberte počet dní do dodání</h4>
   <input type="number" min="1" max="6" required [(ngModel)]="daysTillGet" value="3"> - <span>{{ computedDate }}</span>
   <h2>Upravená cena</h2>
@@ -60,7 +61,7 @@
   <p>Cena za dopravu: {{ dopravaCost.toFixed(2).replace(".",",") }} Kč</p>
   <p>Poplatek za datum: {{ dateCost.toFixed(2).replace(".",",") }} Kč</p>
   <p>Sleva za Myko kartu: {{ mykoDiscount.toFixed(2).replace(".",",") }} Kč</p>
-  <p><strong>Celkem: {{ getCartTotal(dopravaCost + dateCost - mykoDiscount) }} Kč</strong></p>
+  <p id="real-total"><strong>Celkem: {{ getCartTotal(dopravaCost + dateCost - mykoDiscount) }} Kč</strong></p>
   <button (click)="submitOrder()">Objednat</button>
 </main>
 

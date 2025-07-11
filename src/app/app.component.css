@@ -206,13 +206,16 @@
     margin-top: 0;
   }
 
-  table {
-    width: 100%;
+  table{
+    width: 45vw;
     border-collapse: collapse;
   }
   th, td {
-    padding: 0.5rem;
+    padding: 8px;
     text-align: left;
+    /* border-bottom: 1px solid var(--gray-400); */
+  }
+  tr {
     border-bottom: 1px solid var(--gray-400);
   }
   .itemName {
@@ -235,4 +238,35 @@
   .table-parent {
     height: 70vh;
     overflow-y: scroll;
+  }
+
+  button {
+    background-color: var(--bright-blue);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  button:hover {
+    background-color: #51a5ff;
+  }
+  #real-total {
+    margin-top: 1rem;
+    font-size: large;
+  }
+  .continue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  hr {
+    margin: 0;
   }
